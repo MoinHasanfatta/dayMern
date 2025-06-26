@@ -16,7 +16,7 @@ export default function App() {
   const [cart, setCart] = useState([])
   const [showAlert, setShowAlert] = useState(false)
 
-  const API = "http://localhost:3002/products"
+  const API = "https://daymern.onrender.com/products"
 
   const fetchProducts = async () => {
     const res = await axios.get(API)
