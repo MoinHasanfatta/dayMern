@@ -1,13 +1,15 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
 const mongoose = require('mongoose')
-const PORT = 3002
+const PORT = process.env.PORT || 3002
+const MONGOURL = process.env.MONGO
 const cors = require('cors')
 app.use(express.json())
 app.use(cors())
 
 
-mongoose.connect("mongodb://localhost:27017/mern_cart")
+mongoose.connect(MONGOURL)
     .then(()=> console.log("Connected successfully"))
     .catch((err)=> console.error("The problem is", err))
 
